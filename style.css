@@ -9,10 +9,43 @@ header {
     background-color: #488b59;
     color: white;
     font-family: 'Roboto', serif;
-    font-size: 50px;
+    font-size: 100px;
     font-weight: 800;
     display: flex;
     text-align: center;
     align-items: center;
-    height: 100px;
+    height: 150px;
+}
+
+.boxes-container {
+    display: grid;
+    grid-template-columns: repeat(5, 250px);
+    gap: 1px;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 50px;
+}
+
+.keyboard-container {
+    display: flex;
+    flex-direction: column;
+    position: center;
+    gap: 5px;
+}
+
+.keyboard-row {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+button {
+    text-transform: capitalize;
+    width: 150px;
+    height: 150px;
+    font-size: 100px;
+    font-family: 'Roboto' serif;
+    font-weight: 600;
+    border: 7px solid gray;
 }
