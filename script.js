@@ -1,18 +1,26 @@
 const boxesContainer = document.querySelector(".boxes-container");
-
 const rowOne = document.querySelector(".first-row");
 const rowTwo = document.querySelector(".second-row");
 const rowThree = document.querySelector(".third-row");
+const winScreen = document.querySelector(".winScreen");
+const wordEnglish = document.querySelector(".word-english");
+const definitionEnglish = document.querySelector(".definition-english");
+const wordSpanish = document.querySelector(".word-spanish");
+const definitionSpanish = document.querySelector(".definition-spanish");
 
+//Variables that store keyboard rows with their respective letters
 const keysFirstRow = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"];
 const keysSecondRow = ["a", "s", "d", "f", "g", "h", "j", "k", "l"];
 const keysThirdRow = ["z", "x", "c", "v", "b", "n", "m"]; 
 
 //variable for individual boxes in game board
 const boxTiles = [];
+
+//Variables for...
 let currentBox = 0;
 let currentRow = 0;
 
+/** Function to create game board. */
 const boxes = (e) => {
     for (let i = 0; i < 5; i++) {
         for (let j = 0; j < 5; j++) {
@@ -28,72 +36,79 @@ const boxes = (e) => {
 }
 boxes(boxesContainer);
 
+function createKeyboard() {
+    createRow(keysFirstRow, rowOne);
+    createRow(keysSecondRow, rowTwo);
+    createRow(keysThirdRow, rowThree);
+}
 
-/** Function to generate keyboard keys. */
-function keyboard() {
-    let keyTile;
-    document.addEventListener('keydown', function(e) {
-        const key = e.key.toUpperCase();
+function createRow(keys, row) {
+    for (let i = 0; i < keys.length; i++) {
+        const keyTile = document.createElement("button");
 
-        if (key.length === 1 && key >= 'A' && key <= 'Z') {
-            if(currentBox < (currentRow + 1) * 5) {
-                 boxTiles[currentBox].textContent = key;
-                currentBox++;
-            }
-        }
-        if (currentRow < 5) {
-            if (key === "ENTER") {
-                if(currentBox === (currentRow + 1) * 5) {
-                currentRow++;
-                }
-            }
-        }
-    });
+        keyTile.dataset.key = keys[i];
+        keyTile.textContent = keys[i];
 
-    for (let i = 0; i < keysFirstRow.length; i++) {
-        keyTile = document.createElement("button");
-        keyTile.dataset.key = keysFirstRow[i];
-        keyTile.textContent = keysFirstRow[i];
-        rowOne.append(keyTile);
+        row.append(keyTile);
 
         keyTile.addEventListener('click', function(e) {
-            if(currentBox < (currentRow + 1) * 5) {
-                boxTiles[currentBox].textContent = e.target.dataset.key;
-                currentBox++;
-            }
-        });
-    }
-    for (let i = 0; i < keysSecondRow.length; i++) {
-        keyTile = document.createElement("button");
-        keyTile.dataset.key = keysSecondRow[i];
-        keyTile.textContent = keysSecondRow[i];
-        rowTwo.append(keyTile);
-
-        keyTile.addEventListener('click', function(e) {
-            if(currentBox < (currentRow + 1) * 5) {
-                boxTiles[currentBox].textContent = e.target.dataset.key;
-                currentBox++;
-            }
-        });
-    }
-    for (let i = 0; i < keysThirdRow.length; i++) {
-        keyTile = document.createElement("button");
-        keyTile.dataset.key = keysThirdRow[i];
-        keyTile.textContent = keysThirdRow[i];
-        rowThree.append(keyTile);
-        
-        keyTile.addEventListener('click', function(e) {
-            if(currentBox < (currentRow + 1) * 5) {
-                boxTiles[currentBox].textContent = e.target.dataset.key;
-                currentBox++;
-            }
+            enterLetter(e.target.dataset.key);
         });
     }
 }
 
-keyboard();
+function enterLetter(letter) {
+    if(currentBox < (currentRow + 1) * 5) {
+        boxTiles[currentBox].textContent = letter;
+        currentBox++;
+    }
+}
+
+function guessWord() {
+    const guessArray = [];
+    const rowStart = currentRow * 5;
+
+    for (let i = 0; i < 5; i++) {
+        guessArray.push(boxTiles[rowStart + i].textContent);
+    }
+
+    for (let i = 0; i < 5; i++) {
+        if (guessArray[i] === gameWordArray[i]) {
+            boxTiles[rowStart + i].style.backgroundColor = "green";
+        } else if (gameWordArray.includes(guessArray[i])) {
+            boxTiles[rowStart + i].style.backgroundColor = "yellow";
+        }
+    }
+    if (guessArray.join() === gameWordArray.join()) {
+        wordEnglish.textContent = roundInfo[0];
+        definitionEnglish.textContent = roundInfo[2];
+        wordSpanish.textContent = roundInfo[1];
+        definitionSpanish.textContent = roundInfo[3];
+
+        winScreen.style.display = "flex";
+
+        return;
+    }
+    currentRow++;
+}
+
+function handleKeyboardInput(e) {
+    const key = e.key.toUpperCase();
+
+    if (key.length === 1 && key >= "A" && key <= "Z") {
+        enterLetter(key);
+    }
+    if (key === "ENTER") {
+        if (currentBox === (currentRow + 1) * 5) {
+            guessWord();
+        }
+    }
+}
+document.addEventListener("keydown", handleKeyboardInput);
+createKeyboard();
 
 const roundInfo = [];
+const gameWordArray = [];
 
 async function getWord() {
     const response = await fetch("words.json");
@@ -101,9 +116,23 @@ async function getWord() {
 
     const randomIndex = Math.floor(Math.random() * words.length);
     const gameWord = words[randomIndex];
-    roundInfo.push(gameWord.english, gameWord.spanish, gameWord.englishDefinition, gameWord.spanishDefinition);
-    console.log(gameWord.english);
-}
 
+    roundInfo.push(
+        gameWord.english, 
+        gameWord.spanish, 
+        gameWord.englishDefinition, 
+        gameWord.spanishDefinition
+    );
+
+    for(let i = 0; i < gameWord.english.length; i++) {
+        gameWordArray.push(gameWord.english.charAt(i).toUpperCase());
+    }
+
+    console.log(gameWord.english);
+    console.log(gameWordArray);
+}
 getWord();
+
+
+
 
