@@ -1,0 +1,260 @@
+[
+  {
+    "english": "speak",
+    "englishDefinition": "To talk or communicate using words.",
+    "spanish": "hablar",
+    "spanishDefinition": "Expresar pensamientos o ideas mediante palabras."
+  },
+  {
+    "english": "write",
+    "englishDefinition": "To form words or letters using a pen, pencil, or other tool.",
+    "spanish": "escribir",
+    "spanishDefinition": "Representar palabras o ideas mediante letras u otros signos."
+  },
+  {
+    "english": "think",
+    "englishDefinition": "To use your mind to consider or understand something.",
+    "spanish": "pensar",
+    "spanishDefinition": "Formar ideas o considerar algo usando la mente."
+  },
+  {
+    "english": "learn",
+    "englishDefinition": "To gain knowledge or a skill through study or experience.",
+    "spanish": "aprender",
+    "spanishDefinition": "Adquirir conocimientos o habilidades mediante el estudio o la experiencia."
+  },
+  {
+    "english": "teach",
+    "englishDefinition": "To help someone learn something.",
+    "spanish": "enseñar",
+    "spanishDefinition": "Ayudar a alguien a adquirir conocimientos o habilidades."
+  },
+  {
+    "english": "sleep",
+    "englishDefinition": "To rest with your eyes closed and your body inactive.",
+    "spanish": "dormir",
+    "spanishDefinition": "Estar en un estado de descanso en el que el cuerpo y la mente están menos activos."
+  },
+  {
+    "english": "drink",
+    "englishDefinition": "To swallow a liquid.",
+    "spanish": "beber",
+    "spanishDefinition": "Tomar un líquido por la boca y tragarlo."
+  },
+  {
+    "english": "eaten",
+    "englishDefinition": "Consumed as food; the past participle of eat.",
+    "spanish": "comido",
+    "spanishDefinition": "Participio del verbo comer; haber consumido un alimento."
+  },
+  {
+    "english": "drive",
+    "englishDefinition": "To control and operate a vehicle.",
+    "spanish": "conducir",
+    "spanishDefinition": "Controlar y manejar un vehículo."
+  },
+  {
+    "english": "bring",
+    "englishDefinition": "To carry or take something with you to a place.",
+    "spanish": "traer",
+    "spanishDefinition": "Llevar algo hacia el lugar donde se encuentra la persona que habla."
+  },
+  {
+    "english": "start",
+    "englishDefinition": "To begin doing something.",
+    "spanish": "empezar",
+    "spanishDefinition": "Comenzar a hacer algo."
+  },
+  {
+    "english": "check",
+    "englishDefinition": "To look at something carefully to make sure it is correct or safe.",
+    "spanish": "revisar",
+    "spanishDefinition": "Examinar algo para comprobar que está correcto o en buen estado."
+  },
+  {
+    "english": "clean",
+    "englishDefinition": "To remove dirt or unwanted material from something.",
+    "spanish": "limpiar",
+    "spanishDefinition": "Quitar la suciedad de algo."
+  },
+  {
+    "english": "carry",
+    "englishDefinition": "To hold or transport something from one place to another.",
+    "spanish": "llevar",
+    "spanishDefinition": "Transportar o trasladar algo de un lugar a otro."
+  },
+  {
+    "english": "visit",
+    "englishDefinition": "To go somewhere or see someone for a short period.",
+    "spanish": "visitar",
+    "spanishDefinition": "Ir a un lugar o ver a una persona durante un período de tiempo."
+  },
+  {
+    "english": "watch",
+    "englishDefinition": "To look at something carefully, especially for a period of time.",
+    "spanish": "mirar",
+    "spanishDefinition": "Dirigir la vista hacia algo y observarlo."
+  },
+  {
+    "english": "laugh",
+    "englishDefinition": "To make sounds that show amusement or happiness.",
+    "spanish": "reír",
+    "spanishDefinition": "Producir sonidos y movimientos que expresan alegría o diversión."
+  },
+  {
+    "english": "enjoy",
+    "englishDefinition": "To get pleasure or satisfaction from something.",
+    "spanish": "disfrutar",
+    "spanishDefinition": "Sentir placer o satisfacción al hacer o experimentar algo."
+  },
+  {
+    "english": "house",
+    "englishDefinition": "A building where people live.",
+    "spanish": "casa",
+    "spanishDefinition": "Edificio destinado a vivienda."
+  },
+  {
+    "english": "water",
+    "englishDefinition": "A clear liquid that is essential for life.",
+    "spanish": "agua",
+    "spanishDefinition": "Líquido transparente que es esencial para la vida."
+  },
+  {
+    "english": "money",
+    "englishDefinition": "Something used as a means of buying and selling goods and services.",
+    "spanish": "dinero",
+    "spanishDefinition": "Medio utilizado para comprar y vender bienes y servicios."
+  },
+  {
+    "english": "world",
+    "englishDefinition": "The earth and all the people and places on it.",
+    "spanish": "mundo",
+    "spanishDefinition": "El planeta Tierra y todo lo que existe en él."
+  },
+  {
+    "english": "night",
+    "englishDefinition": "The period of darkness between evening and morning.",
+    "spanish": "noche",
+    "spanishDefinition": "Período de oscuridad entre la tarde y la mañana."
+  },
+  {
+    "english": "today",
+    "englishDefinition": "On or during the current day.",
+    "spanish": "hoy",
+    "spanishDefinition": "En el día presente."
+  },
+  {
+    "english": "early",
+    "englishDefinition": "Before the usual or expected time.",
+    "spanish": "temprano",
+    "spanishDefinition": "Antes de la hora habitual o esperada."
+  },
+  {
+    "english": "later",
+    "englishDefinition": "At a time in the future or after the present time.",
+    "spanish": "después",
+    "spanishDefinition": "En un momento posterior o más adelante."
+  },
+  {
+    "english": "never",
+    "englishDefinition": "At no time or on no occasion.",
+    "spanish": "nunca",
+    "spanishDefinition": "En ningún momento o en ninguna ocasión."
+  },
+  {
+    "english": "often",
+    "englishDefinition": "Many times or frequently.",
+    "spanish": "a menudo",
+    "spanishDefinition": "Con frecuencia o muchas veces."
+  },
+  {
+    "english": "again",
+    "englishDefinition": "One more time or another time.",
+    "spanish": "otra vez",
+    "spanishDefinition": "Una vez más."
+  },
+  {
+    "english": "where",
+    "englishDefinition": "In or at what place.",
+    "spanish": "dónde",
+    "spanishDefinition": "Se usa para preguntar por un lugar."
+  },
+  {
+    "english": "there",
+    "englishDefinition": "In or at that place.",
+    "spanish": "allí",
+    "spanishDefinition": "En aquel lugar."
+  },
+  {
+    "english": "which",
+    "englishDefinition": "Used to ask or identify one or more things from a group.",
+    "spanish": "cuál",
+    "spanishDefinition": "Se usa para preguntar o identificar una cosa entre varias."
+  },
+  {
+    "english": "thing",
+    "englishDefinition": "An object, idea, event, or matter.",
+    "spanish": "cosa",
+    "spanishDefinition": "Objeto, asunto, idea o elemento que puede ser identificado."
+  },
+  {
+    "english": "place",
+    "englishDefinition": "A particular position, area, or location.",
+    "spanish": "lugar",
+    "spanishDefinition": "Espacio o sitio determinado."
+  },
+  {
+    "english": "right",
+    "englishDefinition": "Correct or true; also referring to the opposite direction from left.",
+    "spanish": "correcto",
+    "spanishDefinition": "Que está de acuerdo con la verdad o es adecuado."
+  },
+  {
+    "english": "wrong",
+    "englishDefinition": "Not correct or not true.",
+    "spanish": "incorrecto",
+    "spanishDefinition": "Que no es correcto o no está de acuerdo con la verdad."
+  },
+  {
+    "english": "small",
+    "englishDefinition": "Not large in size or amount.",
+    "spanish": "pequeño",
+    "spanishDefinition": "Que tiene poco tamaño o una dimensión reducida."
+  },
+  {
+    "english": "large",
+    "englishDefinition": "Big in size, amount, or extent.",
+    "spanish": "grande",
+    "spanishDefinition": "Que tiene mucho tamaño, cantidad o extensión."
+  },
+  {
+    "english": "young",
+    "englishDefinition": "Having lived for a relatively short time; not old.",
+    "spanish": "joven",
+    "spanishDefinition": "Que tiene poca edad o está en una etapa temprana de la vida."
+  },
+  {
+    "english": "happy",
+    "englishDefinition": "Feeling or showing pleasure or satisfaction.",
+    "spanish": "feliz",
+    "spanishDefinition": "Que siente o muestra alegría o satisfacción."
+  },
+  {
+    "english": "angry",
+    "englishDefinition": "Feeling strong displeasure or irritation.",
+    "spanish": "enojado",
+    "spanishDefinition": "Que siente o muestra enojo o irritación."
+  },
+  {
+    "english": "tired",
+    "englishDefinition": "Needing rest because of physical or mental effort.",
+    "spanish": "cansado",
+    "spanishDefinition": "Que necesita descansar debido al esfuerzo físico o mental."
+  },
+  {
+    "english": "ready",
+    "englishDefinition": "Prepared and able to do something.",
+    "spanish": "listo",
+    "spanishDefinition": "Preparado para hacer algo."
+  }
+]

@@ -11,6 +11,7 @@ const keysThirdRow = ["z", "x", "c", "v", "b", "n", "m"];
 //variable for individual boxes in game board
 const boxTiles = [];
 let currentBox = 0;
+let currentRow = 0;
 
 const boxes = (e) => {
     for (let i = 0; i < 5; i++) {
@@ -35,10 +36,18 @@ function keyboard() {
         const key = e.key.toUpperCase();
 
         if (key.length === 1 && key >= 'A' && key <= 'Z') {
-            boxTiles[currentBox].textContent = key;
-            currentBox++;
+            if(currentBox < (currentRow + 1) * 5) {
+                 boxTiles[currentBox].textContent = key;
+                currentBox++;
+            }
         }
-
+        if (currentRow < 5) {
+            if (key === "ENTER") {
+                if(currentBox === (currentRow + 1) * 5) {
+                currentRow++;
+                }
+            }
+        }
     });
 
     for (let i = 0; i < keysFirstRow.length; i++) {
@@ -48,8 +57,10 @@ function keyboard() {
         rowOne.append(keyTile);
 
         keyTile.addEventListener('click', function(e) {
-            boxTiles[currentBox].textContent = e.target.dataset.key;
-            currentBox++;
+            if(currentBox < (currentRow + 1) * 5) {
+                boxTiles[currentBox].textContent = e.target.dataset.key;
+                currentBox++;
+            }
         });
     }
     for (let i = 0; i < keysSecondRow.length; i++) {
@@ -59,8 +70,10 @@ function keyboard() {
         rowTwo.append(keyTile);
 
         keyTile.addEventListener('click', function(e) {
-            boxTiles[currentBox].textContent = e.target.dataset.key;
-            currentBox++;
+            if(currentBox < (currentRow + 1) * 5) {
+                boxTiles[currentBox].textContent = e.target.dataset.key;
+                currentBox++;
+            }
         });
     }
     for (let i = 0; i < keysThirdRow.length; i++) {
@@ -70,10 +83,27 @@ function keyboard() {
         rowThree.append(keyTile);
         
         keyTile.addEventListener('click', function(e) {
-            boxTiles[currentBox].textContent = e.target.dataset.key;
-            currentBox++;
+            if(currentBox < (currentRow + 1) * 5) {
+                boxTiles[currentBox].textContent = e.target.dataset.key;
+                currentBox++;
+            }
         });
     }
 }
 
 keyboard();
+
+const roundInfo = [];
+
+async function getWord() {
+    const response = await fetch("words.json");
+    const words = await response.json();
+
+    const randomIndex = Math.floor(Math.random() * words.length);
+    const gameWord = words[randomIndex];
+    roundInfo.push(gameWord.english, gameWord.spanish, gameWord.englishDefinition, gameWord.spanishDefinition);
+    console.log(gameWord.english);
+}
+
+getWord();
+
