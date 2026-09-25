@@ -3,6 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     width: 100%;
+    font-family: 'Roboto', serif;
 }
 
 header {
@@ -25,6 +26,15 @@ header {
     height: 100%;
     width: 100%;
     padding: 50px;
+    font-size: 150px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .keyboard-container {
