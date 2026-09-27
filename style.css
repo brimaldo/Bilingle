@@ -1,90 +1,289 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;800&display=swap');
+
+/* Base Styles */
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
     width: 100%;
-    font-family: 'Roboto', serif;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+
+/* Header Styles */
 header {
-    background-color: #488b59;
+    background-color: #264653;
     color: white;
-    font-family: 'Roboto', serif;
-    font-size: 100px;
+    font-size: 7rem;
     font-weight: 800;
     display: flex;
-    text-align: center;
+    justify-content: center;
     align-items: center;
+    text-align: center;
     height: 150px;
+    width: 100%;
 }
 
+/* Game Board Styles */
 .boxes-container {
     display: grid;
-    grid-template-columns: repeat(5, 250px);
-    gap: 1px;
-    justify-content: center;
-    height: 100%;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 6px;
     width: 100%;
-    padding: 50px;
-    font-size: 150px;
-    font-weight: 600;
-    text-transform: capitalize;
+    max-width: 1300px;
+    aspect-ratio: 1 / 1;
+    margin: 20px auto 10px auto;
+    padding: 10px;
 }
 
 .box {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 2px solid #ccc;
+    font-size: 5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: white;
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
 }
 
+/* On-Screen Keyboard Styles */
 .keyboard-container {
     display: flex;
     flex-direction: column;
-    position: center;
-    gap: 5px;
+    gap: 8px;
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+    height: 500px;
+    padding: 0 10px;
+    margin-top: 10px;
 }
 
-.keyboard-row {
+.first-row, .second-row, .third-row {
     display: flex;
-    gap: 5px;
+    flex: 1;
     justify-content: center;
+    gap: 6px;
+    width: 100%;
 }
 
-button {
-    text-transform: capitalize;
-    width: 150px;
-    height: 150px;
-    font-size: 100px;
-    font-family: 'Roboto' serif;
-    font-weight: 600;
-    border: 7px solid gray;
+.keyboard-container button {
+    flex: 1;
+    height: 100%;
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    background-color: #dddddd;
+    cursor: pointer;
+    border: 3px solid #264653;
 }
 
+button:hover {
+    color: #2a9d8f;
+
+}
+
+button[data-key="ENTER"],
+button[data-key="BACKSPACE"] {
+    flex: 1.5;
+    font-size: 2rem;
+    background-color: #2a9d8f;
+    color: black;
+}
+
+/* Base styles */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Background blur backdrop */
+.modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 90;
+}
+
+.modal-backdrop.active {
+    display: block;
+}
+
+/* Win Screen Overlay Styles */
 .winScreen {
     display: none;
-    border: 10px solid black;
-    width: 2000px;
-    max-width: 90vw;
-    height: 1200px;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 1200px;
+    height: 1200px;
     background-color: #c5d5c1;
+    border: 3px solid #333;
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     gap: 150px;
+    z-index: 100;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #9d3e3e;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    padding: 0;
 }
 
 .word-and-def-div {
-    padding: 40px;
-}
-.final-word {
-    font-size: 100px;
     text-align: center;
 }
 
-.final-definition {
-    font-size: 70px;
-    text-align: center;
+.word-english, .word-spanish {
+    font-size: 7rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.definition-english, .definition-spanish {
+    font-size: 4rem;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+
+/* IPad Settings */
+@media (max-width: 1032px) {
+
+    header {
+        height: 100px;
+        font-size: 4rem;
+    }
+
+    .boxes-container {
+        padding: 0;
+        width: 100%;
+        max-width: 800px;
+        gap: 6px;
+        justify-content: center;
+        margin: 50px auto 0 auto;
+    }
+
+    .box {
+        width: 100%;
+        height: 100%;
+        font-size: 4rem;
+    }
+
+    /* On-Screen Keyboard Styles for Mobile */
+    .keyboard-container {
+        box-sizing: border-box;
+        width: 100%;
+        height: auto; 
+        gap: 4px;
+        padding: 50px;
+    }
+
+    .first-row, .second-row, .third-row {
+        flex: none; 
+        height: auto;
+        gap: 3px;  
+    }
+
+    .keyboard-container button {
+        width: auto; 
+        height: 100px; 
+        font-size: 3rem;
+        border-width: 1.5px;
+        border-radius: 4px;
+    }
+
+    button[data-key="ENTER"], 
+    button[data-key="BACKSPACE"] {
+        flex: 1.5;
+        font-size: 1.6rem;
+    }
+
+    /* Win Screen Overlay Styles */
+    .winScreen {
+        width: 90vw;
+        height: auto;
+        max-height: 80vh;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .word-english, .word-spanish {
+        font-size: 2.4rem;
+    }
+
+    .definition-english, .definition-spanish {
+        font-size: 1.2rem;
+    }
+}
+
+/* Mobile Settings */
+@media (max-width: 393px) {
+    header {
+        height: 80px;
+        font-size: 2.5rem;
+    }
+
+    .boxes-container {
+        max-width: 320px;
+        margin: 60px auto 60px auto;
+    }
+
+    .box {
+        width: 100%;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+
+    .keyboard-container {
+        box-sizing: border-box;
+        width: 100%;
+        height: auto; 
+        gap: 4px;     
+        padding: 25px;
+    }
+
+    .keyboard-container button { 
+        height: 70px; 
+        font-size: 1.1rem; 
+    }
+
+    button[data-key="ENTER"], 
+    button[data-key="BACKSPACE"] {
+        font-size: 0.75rem;
+    }
 }

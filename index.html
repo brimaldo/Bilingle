@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wordle</title>
+    <title>Bilingle</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <label>Wordle</label>
+        <label>Bilingle</label>
     </header>
     <div class="boxes-container"></div>
 
@@ -21,7 +21,8 @@
         </div>
     </div>
 
-    <div class="winScreen">
+    <div class="winScreen" id="winScreen">
+        <button class="close-btn" id="close-btn">X</button>
         <div class="word-and-def-div">
             <h1 class="final-word word-english"></h1>
             <h2 class="final-definition definition-english"></h2>
